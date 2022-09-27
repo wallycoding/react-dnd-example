@@ -1,0 +1,90 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #131114;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .group-control {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+    gap: 10px;
+    input {
+      display: flex;
+    }
+    button {
+      background-color: #221f24;
+      border-radius: 0.2rem;
+      border: none;
+      padding: 10px;
+      outline: none;
+      cursor: pointer;
+      font-weight: bold;
+      color: #ccc;
+    }
+  }
+
+  .group-draggable {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 30px;
+    .draggable {
+      max-width: 600px;
+      display: flex;
+      flex: 1;
+      border-radius: 3px;
+      border: solid 2px #3b363d;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+      .photo {
+        display: flex;
+        width: 100%;
+        background-color: #221f24;
+        align-items: center;
+        gap: 10px;
+        user-select: none;
+        border-radius: 3px;
+        overflow: hidden;
+        cursor: grab;
+        img {
+          -webkit-user-drag: none;
+          background-color: white;
+        }
+        h1 {
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .dragging {
+      opacity: 0.5;
+      border: dashed white 1px;
+      overflow: hidden;
+    }
+  }
+}
